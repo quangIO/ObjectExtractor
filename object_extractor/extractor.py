@@ -73,7 +73,7 @@ class Extractor:
                                            minNeighbors=min_neighbors,
                                            minSize=min_size)
 
-    @classmethod
+    @classmethod  # TODO: refactor so we can pass more arguments from cli
     def extract(cls,
                 image_path,
                 size=None,
@@ -81,7 +81,7 @@ class Extractor:
                 min_neighbors=5,
                 min_size=(50, 50),
                 cascade_file=_current_cascade,
-                output_directory=None,
+                output_directory=os.getcwd(),
                 output_prefix=None,
                 start_count=0):
         """ Extract the objects from image and return number of objects detected
@@ -96,7 +96,6 @@ class Extractor:
         output_prefix -- Prefix of output (default None - the name of input image)
         startCout -- Specifying the starting of the number put into output names (default 0)
         """
-
         image = cls.read_image(image_path)
         objects = cls.detect(image,
                              scale_factor=scale_factor,
