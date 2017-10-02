@@ -8,7 +8,7 @@ from object_extractor import Extractor, FRONTALFACE_DEFAULT
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument('-f', '--file', dest='image_path', help='filename.png')
+    parser.add_argument('-f', '--file', dest='image_path', help='filename.png', required=True)
     parser.add_argument('-s', '--size', nargs='?', dest='size', help='Size of face images (default None, no rescale '
                                                                      'at all)', default=None)
     parser.add_argument('-x', '--scale', nargs='?', dest='scale_factor', help='Specifying how much the image size is '
