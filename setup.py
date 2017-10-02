@@ -11,7 +11,11 @@ setup(name='ObjectExtractor',
       description='Extract objects from images with OpenCV',
       url='https://github.com/ducthienbui97/ObjectExtractor',
       author='Thien Bui',
-      scripts=['bin/ObjectExtractor', 'bin/ObjectExtractor.py'],
+      entry_points={
+          'console_scripts': [
+              'ObjectExtractor = object_extractor.extractor:main',
+          ]
+      },
       author_email='thienbui797@gmail.com',
       license='BSD-3-Clause',
       packages=['object_extractor'],
