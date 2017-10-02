@@ -6,7 +6,7 @@ Created on Fri Jul  7 22:59:52 2017
 """
 
 import cv2
-import os
+
 from .data import *
 
 
@@ -73,7 +73,7 @@ class Extractor:
                                            minNeighbors=min_neighbors,
                                            minSize=min_size)
 
-    @classmethod  # TODO: refactor so we can pass more arguments from cli
+    @classmethod
     def extract(cls,
                 image_path,
                 size=None,
